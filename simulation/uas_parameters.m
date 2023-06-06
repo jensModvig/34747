@@ -32,7 +32,19 @@ clc
 
 %% SIMULATION PARAMETERS
 
-route = [0 0 1 ; 9 0 1 ; 9 9 1];
+load('wall.txt');
+
+x_scale = 0.65;
+y_scale = 0.55;
+z_scale = 0.75;
+
+x_offset = 0.3;
+y_offset = 0.5;
+z_offset = 0.25;
+
+route = find_route_3d(wall, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
+
+%route = [0 0 1 ; 9 0 1 ; 9 9 1];
 wall_color = [0.8 0.2 0.2];
 sample_time = 4e-2;
 publish_rate = 1 * sample_time;

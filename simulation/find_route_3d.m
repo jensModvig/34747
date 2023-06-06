@@ -42,4 +42,5 @@ function [route_scaled] = find_route_3d(wall, x_scale, y_scale, z_scale, x_offse
     route_scaled(:,1) = (route_scaled(:,1) - 1) * x_scale + x_offset;
     route_scaled(:,2) = (route_scaled(:,2) - 1) * y_scale + y_offset;
     route_scaled(:,3) = (route_scaled(:,3) - 1) * z_scale + z_offset;
+    route_scaled = [route_scaled; route_scaled(end, 1) route_scaled(end, 2) 0];
 end
