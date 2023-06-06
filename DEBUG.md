@@ -1,8 +1,5 @@
-Restart drone and cfclient at the same time
-
 Press scan in cfclient until the list updates
-
-
+Restart drone and cfclient at the same time
 Cfclient isnt required to run
 Cfclient must be disconnected
 for cfstart 5 to run
@@ -26,3 +23,5 @@ Close all;
 
 # after crash
 Check that motors arent pushed up
+
+Password: asta2020
