@@ -1,4 +1,4 @@
-function [route_scaled] = find_route_3d(wall, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset)
+function [route_scaled] = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset)
     % Setup the map
     % Load the map from the wall file. Each line, except the two last, in the
     % wall file is an obstacle. The position of the obstacle is defined in the
@@ -9,6 +9,10 @@ function [route_scaled] = find_route_3d(wall, x_scale, y_scale, z_scale, x_offse
     % e.g. wall = maze_2;
     wall = wall;
     
+    key = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+    values = {[1 1 1], [2 1 1] [3 1 1], [4 1 1], [1 5 1], [2 5 1], [3 5 1], [4 5 1]};
+    D = containers.Map(key, values);
+
     % Define the map size
     max_x = wall(length(wall) - 2, 1);
     max_y = wall(length(wall) - 2, 2);
@@ -24,8 +28,8 @@ function [route_scaled] = find_route_3d(wall, x_scale, y_scale, z_scale, x_offse
     end
     
     % Define the starting and end position
-    start = wall(length(wall) - 1, :);
-    end_ = wall(length(wall), :);    
+    start = D(start_letter);
+    end_ = D(end_letter);    
     
     % Make sure the start and end is not an obstacle
     map(start(1), start(2), start(3)) = 0;
