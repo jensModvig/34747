@@ -35,11 +35,11 @@ clc
 
 load('wall.txt');
 
-x_scale = 0.65;
-y_scale = 0.55;
-z_scale = 0.75;
+x_scale = 0.6;
+y_scale = 0.52;
+z_scale = 0.73;
 
-x_offset = 0.23;
+x_offset = 0.3;
 y_offset = 0.5;
 z_offset = 0.25;
 
