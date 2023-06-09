@@ -77,8 +77,8 @@ x_scale = 0.65;
 y_scale = 0.55;
 z_scale = 0.75;
 
-x_offset = 0.25;
-y_offset = 0.4;
+x_offset = 0.23;
+y_offset = 0.5;
 z_offset = 0.25;
 
 start_letter = "A";
