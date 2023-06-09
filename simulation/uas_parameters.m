@@ -77,12 +77,12 @@ x_scale = 0.65;
 y_scale = 0.55;
 z_scale = 0.75;
 
-x_offset = 0.3;
-y_offset = 0.5;
+x_offset = 0.25;
+y_offset = 0.4;
 z_offset = 0.25;
 
 start_letter = "A";
-end_letter = "G";
+end_letter = "H";
 
 route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
 
