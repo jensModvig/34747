@@ -32,44 +32,6 @@ clc
 
 %% SIMULATION PARAMETERS
 
-layer1 = [0 0 0 0 0 0 0 0 0 0;
-0 1 0 1 1 1 1 1 1 0;
-1 1 0 1 1 0 0 0 1 0;
-0 0 0 0 1 0 1 0 1 0;
-0 1 1 0 0 0 1 0 0 0;
-0 0 1 1 1 1 1 1 1 0;
-1 0 0 0 1 0 0 0 1 0;
-1 1 1 0 0 0 1 0 1 0;
-1 1 1 1 1 1 1 0 1 0;
-0 0 0 0 0 0 0 0 0 0];
-
-layer2 = [0 0 0 0 0 0 0 0 0 0;
-0 1 0 1 1 1 1 0 1 0;
-0 1 0 1 1 0 0 0 1 0;
-0 0 0 0 1 0 0 0 1 0;
-0 1 1 0 0 0 1 0 0 0;
-0 0 1 1 1 0 1 1 1 0;
-1 0 0 0 1 0 0 0 1 0;
-1 1 1 0 0 0 1 0 1 0;
-1 1 1 0 0 1 1 0 1 0;
-0 0 0 0 0 0 0 0 0 0];
-
-layer3 = [0 0 0 0 0 0 0 0 0 0;
-0 1 0 1 1 0 1 1 1 0;
-1 1 0 1 1 0 0 0 1 0;
-0 0 0 0 1 0 1 0 1 0;
-0 0 1 0 0 0 1 0 0 0;
-0 0 1 0 1 0 1 1 1 0;
-1 0 0 0 1 0 0 0 0 0;
-1 0 1 0 0 0 1 0 1 0;
-1 0 1 1 1 1 1 0 1 0;
-0 0 0 0 0 0 0 0 0 0];
-
-map = zeros(10,10,3);
-map(:,:,1) = layer1;
-map(:,:,2) = layer2;
-map(:,:,3) = layer3;
-map = flip(map);
 
 load('wall.txt');
 
@@ -81,8 +43,8 @@ x_offset = 0.23;
 y_offset = 0.5;
 z_offset = 0.25;
 
-start_letter = "A";
-end_letter = "H";
+start_letter = "G";
+end_letter = "B";
 
 route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
 
