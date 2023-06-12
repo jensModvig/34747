@@ -26,3 +26,6 @@ Check that motors arent pushed up
 
 User: cftemp2
 Password: asta2020
+
+# Motion capture
+roslaunch vrpn_client_ros sample.launch server:=192.168.1.129
