@@ -46,7 +46,7 @@ z_offset = 0.25;
 start_letter = "G";
 end_letter = "B";
 
-route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
+% route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
 
 %route = [0 0 1 ; 9 0 1 ; 9 9 1];
 wall_color = [0.8 0.2 0.2];
