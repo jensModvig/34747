@@ -25,25 +25,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Initialization
-close all
-clear
-clc
+%close all
+%clear
+%clc
 
 % Trajectory generation
 
 knots = [0 5];
 waypoints = cell(1,2);
 waypoints{1} = [0 ; 0 ; 1];
+%waypoints{2} = [8 ; 1 ; 1];
 waypoints{2} = [9 ; 9 ; 1];
 % Fix this...
 order = 7;
-corridors.times = [1 4];
-corridors.x_lower = [-1 8];
-corridors.x_upper = [1 10];
-corridors.y_lower = [-1 8];
-corridors.y_upper = [1 10];
-corridors.z_lower = [0 0];
-corridors.z_upper = [2 2];
+knots = [0 5];
+waypoints = cell(1,2);
+waypoints{1} = [0 ; 0 ; 1];
+%waypoints{2} = [8 ; 1 ; 1];
+waypoints{2} = [9 ; 9 ; 1];
+% Fix this...
+order = 7;
+corridors.times = [1 1.75 3 4.9];
+corridors.x_lower = [-1 3.5 8.25 8];
+corridors.x_upper = [1 4.5 9 10];
+corridors.y_lower = [-1 -0.25 0 8];
+corridors.y_upper = [1 0.5 1 10];
+corridors.z_lower = [0 0 0 0];
+corridors.z_upper = [2 2 2 2];
 % ...until here
 make_plots = true;
 
