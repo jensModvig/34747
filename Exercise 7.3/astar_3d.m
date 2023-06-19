@@ -94,7 +94,6 @@ function [ route ] = astar_3d( map, start, end_, length_cost )
                                 % node
                                 temp_node.g = parent_node.g + temp_node.calc_dist(parent_node.position);
 
-
                                 % Calculate the total cost of the node
                                 temp_node.f = temp_node.h + temp_node.g;
     
