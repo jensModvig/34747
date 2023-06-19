@@ -48,17 +48,21 @@ end_letter = "B";
 
 %route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
 
-%route = [0 0 1 ; 9 0 1 ; 9 9 1];
+% Linear relationship between thrust and z-acc
+% a = 0.8;
+a = 0.3;
+b = 0.0091;
+
+
 wall_color = [0.8 0.2 0.2];
 sample_time = 4e-2;
 publish_rate = 1 * sample_time;
 x0 = 36;
 y0 = 80;
 z0 = 1;
-a = 0.8;
-b = 0.0091;
 g = 9.80665 ;
 mass_drone = 0.68 ;
+%mass_drone = 0.038;
 mass_rod = 0.0;
 mass_tip = 0;
 mass_total = mass_drone + mass_rod + mass_tip;
