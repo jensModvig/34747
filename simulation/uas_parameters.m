@@ -33,7 +33,7 @@ clc
 %% SIMULATION PARAMETERS
 
 
-load('wall.txt');
+%load('wall.txt');
 
 x_scale = 0.6;
 y_scale = 0.52;
@@ -46,20 +46,17 @@ z_offset = 0.25;
 start_letter = "G";
 end_letter = "B";
 
-<<<<<<< HEAD
-% route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
-=======
-%route = find_route_3d(wall, start_letter, end_letter, x_scale, y_scale, z_scale, x_offset, y_offset, z_offset);
 
 % Linear relationship between thrust and z-acc
 % a = 0.8;
-a = 0.065;
-b = 0.11;
+a = 0.15;
+b = 0.85;
 
-% Set hover height
-z_hover = 1;
-
->>>>>>> Erik
+% Set drone position
+x = 0.971;
+y = -3.11;
+z_1 = 1;
+z_2 = 2;
 
 wall_color = [0.8 0.2 0.2];
 sample_time = 4e-2;
