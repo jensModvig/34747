@@ -50,8 +50,11 @@ end_letter = "B";
 
 % Linear relationship between thrust and z-acc
 % a = 0.8;
-a = 0.3;
-b = 0.0091;
+a = 0.065;
+b = 0.11;
+
+% Set hover height
+z_hover = 1;
 
 
 wall_color = [0.8 0.2 0.2];
