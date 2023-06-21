@@ -1,12 +1,12 @@
 clear; clc; close all 
 
 % Run simulink to get drone and hoops position 
-poses = sim("hoop_pose", 30);
+poses = sim("hoop_pose_2022a", 100);
 uas_parameters;
 
-initial_drone_pose = [mean(poses.Drone.Pose.Position.X);...
-                      mean(poses.Drone.Pose.Position.Y);...
-                      mean(poses.Drone.Pose.Position.Z)];
+initial_drone_pose = [poses.Drone.Pose.Position.X(end);...
+                      poses.Drone.Pose.Position.Y(end);...
+                      poses.Drone.Pose.Position.Z(end)];
 % Initialize array for storing hoop positions
 hoop_pose = [];
 
@@ -16,9 +16,9 @@ y_q = [mean(poses.Hoop1.Pose.Orientation.Y.data)];
 z_q = [mean(poses.Hoop1.Pose.Orientation.Z.data)];
 w_q = [mean(poses.Hoop1.Pose.Orientation.W.data)];
 
-temp_pos = [mean(poses.Hoop1.Pose.Position.X.data);...
-            mean(poses.Hoop1.Pose.Position.Y.data);...
-            mean(poses.Hoop1.Pose.Position.Z.data)];
+temp_pos = [poses.Hoop1.Pose.Position.X.data(end);...
+            poses.Hoop1.Pose.Position.Y.data(end);...
+            poses.Hoop1.Pose.Position.Z.data(end)];
 %rotation_matrix = quat2rotm([x_q(1), y_q(1) z_q(1) w_q(1)]);
 
 %hoop_pose = [hoop_pose, rotation_matrix*temp_pos];
@@ -30,9 +30,9 @@ y_q = [y_q, mean(poses.Hoop2.Pose.Orientation.Y.data)];
 z_q = [z_q, mean(poses.Hoop2.Pose.Orientation.Z.data)];
 w_q = [w_q, mean(poses.Hoop2.Pose.Orientation.W.data)];
 
-temp_pos = [mean(poses.Hoop2.Pose.Position.X.data);...
-            mean(poses.Hoop2.Pose.Position.Y.data);...
-            mean(poses.Hoop2.Pose.Position.Z.data)];
+temp_pos = [poses.Hoop2.Pose.Position.X.data(end);...
+            poses.Hoop2.Pose.Position.Y.data(end);...
+            poses.Hoop2.Pose.Position.Z.data(end)];
 %rotation_matrix = quat2rotm([x_q(2), y_q(2) z_q(2) w_q(2)]);
 
 hoop_pose = [hoop_pose, temp_pos];
@@ -43,9 +43,9 @@ y_q = [y_q, mean(poses.Hoop3.Pose.Orientation.Y.data)];
 z_q = [z_q, mean(poses.Hoop3.Pose.Orientation.Z.data)];
 w_q = [w_q, mean(poses.Hoop3.Pose.Orientation.W.data)];
 
-temp_pos = [mean(poses.Hoop3.Pose.Position.X.data);...
-            mean(poses.Hoop3.Pose.Position.Y.data);...
-            mean(poses.Hoop3.Pose.Position.Z.data)];
+temp_pos = [poses.Hoop3.Pose.Position.X.data(end);...
+            poses.Hoop3.Pose.Position.Y.data(end);...
+            poses.Hoop3.Pose.Position.Z.data(end)];
 %rotation_matrix = quat2rotm([x_q(3), y_q(3) z_q(3) w_q(3)]);
 
 hoop_pose = [hoop_pose, temp_pos];
@@ -56,9 +56,9 @@ y_q = [y_q, mean(poses.Hoop4.Pose.Orientation.Y.data)];
 z_q = [z_q, mean(poses.Hoop4.Pose.Orientation.Z.data)];
 w_q = [w_q, mean(poses.Hoop4.Pose.Orientation.W.data)];
 
-temp_pos = [mean(poses.Hoop4.Pose.Position.X.data);...
-            mean(poses.Hoop4.Pose.Position.Y.data);...
-            mean(poses.Hoop4.Pose.Position.Z.data)];
+temp_pos = [poses.Hoop4.Pose.Position.X.data(end);...
+            poses.Hoop4.Pose.Position.Y.data(end);...
+            poses.Hoop4.Pose.Position.Z.data(end)];
 %rotation_matrix = quat2rotm([x_q(4), y_q(4) z_q(4) w_q(4)]);
 
 hoop_pose = [hoop_pose, temp_pos];
@@ -106,7 +106,7 @@ delta_t = 7.5;
 % TODO add error term for the position
 start_time = 15;
 corridors.times = [0 1 2 3 4 5 6] * delta_t + start_time;
-offset = 0.2;
+offset = 0.25;
 z_offset = 0.085;
 
 corridors.x_lower = [x(1)-r, corner12(1)-offset, x(2)-r, corner23(1)- offset, x(3)-r, corner34(1)-offset, x(4)-r];
