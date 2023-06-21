@@ -41,7 +41,7 @@ x0d = [0 ; 0 ; 0];
 x0dd = [0 ; 0 ; 0];
 for m = 1:length(waypoints)
     % Order 0 pin (waypoints)
-    pin = struct('t',knots(m),'d',0,'X',waypoints{m});
+    pin = struct('t',knots(m),'d',0,'X',waypoints{m})
     poly_traj.addPin(pin);
     % Order 1 pin 
     pin = struct('t',knots(m),'d',1,'X',x0d);
