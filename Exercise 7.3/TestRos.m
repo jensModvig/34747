@@ -116,12 +116,12 @@ corridors.y_upper = [y(1)+r, corner12(2)+offset, y(2)+r, corner23(2)+offset, y(3
 corridors.z_lower = [z(1)-r, corner12(3)-offset, z(2)-r, corner23(3)-offset, z(3)-r, corner34(3)-offset, z(4)-r] + z_offset;
 corridors.z_upper = [z(1)+r, corner12(3)+offset, z(2)+r, corner23(3)+offset, z(4)+r, corner34(3)+offset, z(4)+r] - z_offset;
 
-corridors.x_lower = flip(corridors.x_lower);
-corridors.x_upper = flip(corridors.x_upper);
-corridors.y_lower = flip(corridors.y_lower);
-corridors.y_upper = flip(corridors.y_upper);
-corridors.z_lower = flip(corridors.z_lower);
-corridors.z_upper = flip(corridors.z_upper);
+%corridors.x_lower = flip(corridors.x_lower);
+%corridors.x_upper = flip(corridors.x_upper);
+%corridors.y_lower = flip(corridors.y_lower);
+%corridors.y_upper = flip(corridors.y_upper);
+%corridors.z_lower = flip(corridors.z_lower);
+%corridors.z_upper = flip(corridors.z_upper);
 
 make_plots = true;
 
